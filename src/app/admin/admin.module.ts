@@ -48,6 +48,8 @@ import { ContactsComponent } from './examples/contacts/contacts.component';
 import { AdvancedComponent } from './forms/advanced/advanced.component';
 import { EditorsComponent } from './forms/editors/editors.component';
 import { EditQuestionComponent } from './examples/edit-question/edit-question.component';
+import { QuestionsFromFileComponent } from './examples/questions-from-file/questions-from-file.component';
+import { UploadComponent } from './examples/upload/upload.component';
 @NgModule({
   declarations: [
     AdminComponent,
@@ -67,7 +69,9 @@ import { EditQuestionComponent } from './examples/edit-question/edit-question.co
     ContactsComponent,
     AdvancedComponent,
     EditorsComponent,
-    EditQuestionComponent
+    EditQuestionComponent,
+    QuestionsFromFileComponent,
+    UploadComponent
     
     
   ],

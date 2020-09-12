@@ -22,6 +22,8 @@ import { Error404Component } from './examples/error404/error404.component';
 import { Error500Component } from './examples/error500/error500.component';
 import { BlankpageComponent } from './examples/blankpage/blankpage.component';
 import { EditQuestionComponent } from './examples/edit-question/edit-question.component';
+import { QuestionsFromFileComponent } from './examples/questions-from-file/questions-from-file.component';
+import { UploadComponent } from './examples/upload/upload.component';
 
 const routes: Routes = [
   {
@@ -104,6 +106,15 @@ const routes: Routes = [
       {
         path: "editquestion",
         component: EditQuestionComponent,
+      },
+      {
+        path: "checkquestion",
+        component: QuestionsFromFileComponent,
+      }
+      ,
+      {
+        path: "upload",
+        component: UploadComponent,
       }
     ],
   },

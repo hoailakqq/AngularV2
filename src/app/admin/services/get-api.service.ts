@@ -40,9 +40,15 @@ export class GetAPIService {
   getLessions(a){
     return this.http.post(this.rootHomeUrl+'getLession',a);
   }
+  getAllLessions(){
+    return this.http.get(this.rootHomeUrl+'getLessions');
+  }
 
   getParts(a){
     return this.http.post(this.rootHomeUrl+'getPart',a);
+  }
+  getAllParts(){
+    return this.http.get(this.rootHomeUrl+'getParts');
   }
   // obj: any = {"id_part": "1", "id": "4", "id_lession": "13"};
 
@@ -67,6 +73,9 @@ export class GetAPIService {
   delQuesionById(a){
     return this.http.post(this.rootHomeUrl+'delQuesionById',a);
   }
+  pushQuesionById(a){
+    return this.http.post(this.rootHomeUrl+'pushData',a);
+  }
 
   getQuesionById(a){
     var ob = {};
@@ -75,5 +84,9 @@ export class GetAPIService {
   }
   getFamousUser(){
     return this.http.get(this.rootHomeUrl+'getFamousUser');
+  }
+
+  getCheckQuestions(){
+    return this.http.get(this.rootHomeUrl+'getCheckQuestions');
   }
 }

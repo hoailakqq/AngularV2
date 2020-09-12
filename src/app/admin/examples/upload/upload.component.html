@@ -1,0 +1,21 @@
+
+<div class="row" style="margin-bottom:15px;">
+    <div class="col-md-3">
+        <H3>Upload Question form file </H3>
+      </div>
+    <div class="col-md-3">
+      <input type="file" #file placeholder="Choose file" (change)="uploadFile(file.files)" style="display:none;" multiple>
+      <button type="button" class="btn btn-success" (click)="file.click()">Upload File</button>
+    </div>
+    <div class="col-md-4 ml-6">
+      <span class="upload" *ngIf="progress > 0">
+        {{progress}}%
+      </span>
+      <span [ngClass]="{
+        'upload': check,
+        'upload-fails': !check
+      }" *ngIf="message">
+        {{message}}
+      </span>
+    </div>
+  </div>

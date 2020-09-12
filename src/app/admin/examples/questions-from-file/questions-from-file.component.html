@@ -1,0 +1,74 @@
+<!-- Content Wrapper. Contains page content -->
+<!-- <div class="content-wrapper"> -->
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Questions</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Questions</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row ml-5">
+
+        
+        
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">lession</th>
+                        <th scope="col">part</th>
+                        <th scope="col">question</th>
+                        <th scope="col">dapanA</th>
+                        <th scope="col">dapanB</th>
+                        <th scope="col">dapanC</th>
+                        <th scope="col">dapanD</th>
+                        <th scope="col">answer</th>
+                        <th scope="col">sound</th>
+                        <th scope="col">image</th>
+                        <th scope="col">isActive</th>
+                        <th scope="col">Xác nhận</th>
+                        <th scope="col">Xóa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let question of questions; index as i">
+                        <th scope="row">{{ i + 1 }}</th>
+                        <td>{{lessionShow(question['id_Lession'])}}</td>
+                        <td>{{partShow(question['id_Part'])}}</td>
+                        <td >{{question['question']}}</td>
+                        <td>{{question['dapanA']}}</td>
+                         <td>{{question['dapanB']}}</td>
+                        <td>{{question['dapanC']}}</td>
+                        <td>{{question['dapanD']}}</td>
+                        <td>{{question['answer']}}</td>
+                        <td >{{question['sound']}}</td>
+                        
+                        <td style="background-color: red;"><img src="{{question.image}}" class="mr-2" style="width: 50px"></td>
+                        <td>{{question['isActive']}}</td> 
+                        <td><input type="submit" class="btn btn-success float-right" (click)="push(question.id)"></td> 
+                        <td><input type="submit" value="Xóa" class="btn btn-danger float-right" (click)="delete(question.id)"></td> 
+
+                    </tr>
+                </tbody>
+            </table>
+    </div>
+    <div class="row">
+
+
+    </div>
+</section>
+<!-- /.content -->
+<!-- </div> -->
+<!-- /.content-wrapper -->
