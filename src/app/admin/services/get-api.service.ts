@@ -70,8 +70,8 @@ export class GetAPIService {
   getLogByDay(a){
     return this.http.post(this.rootHomeUrl+'getLogByDay',a);
   }
-  delQuesionById(a){
-    return this.http.post(this.rootHomeUrl+'delQuesionById',a);
+  delQuesionSById(a){
+    return this.http.post(this.rootHomeUrl+'delQuesionSById',a);
   }
   pushQuesionById(a){
     return this.http.post(this.rootHomeUrl+'pushData',a);
