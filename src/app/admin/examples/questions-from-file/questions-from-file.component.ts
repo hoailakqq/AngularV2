@@ -81,6 +81,15 @@ part
     });
   }
   countries = this.questions;
+  error = false;
+  errorF():string {
+    return "error";
+  }
+btncheck = true;
+  change(a){
+    a.trim()==''?this.btncheck=false:this.btncheck;
+  }
+
   delete(a) {
     var Obj = {};
     Obj["id"] = 1 * a;

@@ -21,48 +21,58 @@
 <section class="content">
     <div class="row ml-5">
 
-        
-        
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">lession</th>
-                        <th scope="col">part</th>
-                        <th scope="col">question</th>
-                        <th scope="col">dapanA</th>
-                        <th scope="col">dapanB</th>
-                        <th scope="col">dapanC</th>
-                        <th scope="col">dapanD</th>
-                        <th scope="col">answer</th>
-                        <th scope="col">sound</th>
-                        <th scope="col">image</th>
-                        <th scope="col">isActive</th>
-                        <th scope="col">Xác nhận</th>
-                        <th scope="col">Xóa</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let question of questions; index as i">
-                        <th scope="row">{{ i + 1 }}</th>
-                        <td>{{lessionShow(question['id_Lession'])}}</td>
-                        <td>{{partShow(question['id_Part'])}}</td>
-                        <td >{{question['question']}}</td>
-                        <td>{{question['dapanA']}}</td>
-                         <td>{{question['dapanB']}}</td>
-                        <td>{{question['dapanC']}}</td>
-                        <td>{{question['dapanD']}}</td>
-                        <td>{{question['answer']}}</td>
-                        <td >{{question['sound']}}</td>
-                        
-                        <td style="background-color: red;"><img src="{{question.image}}" class="mr-2" style="width: 50px"></td>
-                        <td>{{question['isActive']}}</td> 
-                        <td><input type="submit" class="btn btn-success float-right" (click)="push(question.id)"></td> 
-                        <td><input type="submit" value="Xóa" class="btn btn-danger float-right" (click)="delete(question.id)"></td> 
 
-                    </tr>
-                </tbody>
-            </table>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">lession</th>
+                    <th scope="col">part</th>
+                    <th scope="col">question</th>
+                    <th scope="col">dapanA</th>
+                    <th scope="col">dapanB</th>
+                    <th scope="col">dapanC</th>
+                    <th scope="col">dapanD</th>
+                    <th scope="col">answer</th>
+                    <th scope="col">sound</th>
+                    <th scope="col">image</th>
+                    <th scope="col">isActive</th>
+                    <th scope="col">Xác nhận</th>
+                    <th scope="col">Xóa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let question of questions; index as i">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td [style.color]="question['id_Lession']!='' ? 'green' : 'red'">
+                        {{lessionShow(question['id_Lession'])!=''?lessionShow(question['id_Lession']):error}}</td>
+                    <td [style.color]="question['id_Part']!='' ? 'green' : 'red'">
+                        {{partShow(question['id_Part'])!=''?partShow(question['id_Part']):error}}</td>
+                    <td [style.color]="question['question'].trim()!='' ? 'green' : 'red'">
+                        {{question['question'].trim()!=''?question['question']:error}}</td>
+                    <td [style.color]="question['dapanA'].trim()!='' ? 'green' : 'red'">
+                        {{question['dapanA'].trim()!=''?question['dapanA']:error}}</td>
+                    <td [style.color]="question['dapanB'].trim()!='' ? 'green' : 'red'">
+                        {{question['dapanB'].trim()!=''?question['dapanB']:error}}</td>
+                    <td [style.color]="question['dapanC'].trim()!='' ? 'green' : 'red'">
+                        {{question['dapanC'].trim()!=''?question['dapanC']:error}}</td>
+                    <td [style.color]="question['dapanD'].trim()!='' ? 'green' : 'red'">
+                        {{question['dapanD'].trim()!=''?question['dapanD']:error}}</td>
+                    <td [style.color]="question['answer'].trim()!='' ? 'green' : 'red'">
+                        {{question['answer'].trim()!=''?question['answer']:error}}</td>
+                    <td [style.color]="question['sound'].trim()!='' ? 'green' : 'red'">
+                        {{question['sound'].trim()!=''?question['sound']:error}}</td>
+
+                    <td><img src="{{question.image}}" class="mr-2" style="width: 50px"></td>
+                    <td>{{question['isActive']}}</td>
+                    <td><input type="submit" class="btn btn-success float-right" (click)="push(question.id)"></td>
+                    <td><input type="submit" value="Xóa" class="btn btn-danger float-right"
+                            (click)="delete(question.id)"></td>
+
+                </tr>
+            </tbody>
+        </table>
     </div>
     <div class="row">
 
