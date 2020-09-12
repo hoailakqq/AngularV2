@@ -1,0 +1,126 @@
+<!-- Content Wrapper. Contains page content -->
+<!-- <div class="content-wrapper"> -->
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Questions</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Questions</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+
+        <div class="col-md-3">
+            <div class="card card-secondary">
+                <div class="card-header">
+                    <h3 class="card-title">Role</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
+                            title="Collapse">
+                            <i class="fas fa-minus"></i></button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="inputStatus">Category</label>
+                        <select class="form-control custom-select" ngDefaultControl [(ngModel)]="selectedCategory"
+                            (change)="selectCategory()">
+                            <!-- <option selected disabled >Select one</option> -->
+                            <option *ngFor="let item of categorys" [value]="item.id">{{item.name}}</option>
+                        </select>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="inputStatus">Lessions</label>
+                        <select class="form-control custom-select" ngDefaultControl [(ngModel)]="selectedLession"
+                            (change)="selectLession()">
+                            <!-- <option selected disabled >Select one</option> -->
+                            <option *ngFor="let item of lessions" [value]="item.id">{{item.name}}</option>
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputStatus">Part</label>
+                        <select class="form-control custom-select" ngDefaultControl [(ngModel)]="selectedPart"
+                            (change)="selectPart()">
+                            <!-- <option selected disabled >Select one</option> -->
+                            <option *ngFor="let item of parts" [value]="item.id">{{item.name}}</option>
+                        </select>
+
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="IsActive" [checked]="IsActive" (change)="IsActive = !IsActive">
+                        <label for="IsActive" [style.color]="IsActive? '#28a745' :'red'">
+                            IsActive : {{IsActive}}
+                        </label>
+                    </div>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+            <div>
+                <a href="#" class="btn btn-secondary">Cancel</a>
+                <input type="submit" value="Submit" class="btn btn-success float-right" (click)="getQuestions()">
+            </div>
+        </div>
+        <div class="col-md-9">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">question</th>
+                        <th scope="col">dapanA</th>
+                        <th scope="col">dapanB</th>
+                        <th scope="col">dapanC</th>
+                        <th scope="col">dapanD</th>
+                        <th scope="col">answer</th>
+                        <th scope="col">sound</th>
+                        <th scope="col">image</th>
+                        <th scope="col">isActive</th>
+                        <th scope="col">Sửa</th>
+                        <th scope="col">Xóa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let question of questions; index as i">
+                        <th scope="row">{{ i + 1 }}</th>
+                        
+                        <td>{{question['question']}}</td>
+                        <td>{{question['dapanA']}}</td>
+                         <td>{{question['dapanB']}}</td>
+                        <td>{{question['dapanC']}}</td>
+                        <td>{{question['dapanD']}}</td>
+                        <td>{{question['answer']}}</td>
+                        <td>{{question['sound']}}</td>
+                        
+                        <td><img src="{{question.image}}" class="mr-2" style="width: 50px"></td>
+                        <td>{{question['isActive']}}</td> 
+                        <td><a routerLink="/admin/editquestion/1" routerLinkActive="router-link-active"><input type="submit" class="btn btn-danger float-right"></a></td> 
+                        <td><input type="submit" value="Xóa" class="btn btn-danger float-right" (click)="delete(question.id)"></td> 
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+
+
+    </div>
+</section>
+<!-- /.content -->
+<!-- </div> -->
+<!-- /.content-wrapper -->

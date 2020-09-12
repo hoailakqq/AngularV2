@@ -1,0 +1,114 @@
+<!-- Slide Menu-->
+<aside
+  class="side-menu__container"
+  [ngClass]="{ 'side-menu__container-active': showMenu }"
+  (click)="toggleMenu()"
+>
+  <nav
+    class="slide-menu"
+    [ngClass]="{
+      'slide-menu-active': showMenu,
+      'slide-menu-active-dark': darkModeActive
+    }"
+    (click)="$event.stopImmediatePropagation()"
+  >
+    <section
+      class="menu-header"
+      [ngClass]="{ 'menu-header-dark': darkModeActive }"
+    >
+      <span class="greeting__text">Welcome Back</span>
+      <div class="profile-image__container">
+        <img
+          src="https://www.jamf.com/jamf-nation/img/default-avatars/generic-user-purple.png"
+          alt="profile-image"
+          class="profile__image"
+        />
+      </div>
+      <div class="account-details">
+        <span class="name__text">{{ userEmail }}</span>
+        <span class="email__text">Free Plan</span>
+      </div>
+    </section>
+    <section class="menu-body">
+      <ul class="menu-links" [ngClass]="{ 'menu-links-dark': darkModeActive }">
+        <li
+          class="menu-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLink=""
+          routerLinkActive="link-active"
+          (click)="toggleMenu()"
+        >
+          Home
+        </li>
+        <li
+          class="menu-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLink="/profile"
+          routerLinkActive="link-active"
+          (click)="toggleMenu()"
+        >
+          Hồ sơ của bạn
+        </li>
+        <li
+          class="menu-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLink="/add"
+          routerLinkActive="link-active"
+          (click)="toggleMenu()"
+        >
+          Add City
+        </li>
+        <li (click)="logout()" class="menu-link">Logout</li>
+      </ul>
+    </section>
+    <section class="menu-footer">
+      <small class="copyright__text">Copyright © 2020 Pea</small>
+    </section>
+  </nav>
+</aside>
+
+<main
+  class="root__container"
+  [ngClass]="{ 'root__container-dark': darkModeActive }"
+>
+  <header
+    [ngClass]="{ 'main__header-dark': darkModeActive }"
+    class="main__header"
+    *ngIf="loggedIn"
+  >
+    <div class="navbar">
+      <a class="margin category" href="/client"
+        ><i class="fab fa-leanpub" style="color: tomato; font-size: 20px"></i
+        >Học</a
+      >
+      <a class="margin category" href="/client/dictionary"
+        ><i class="fas fa-book" style="color: #1899d6; font-size: 20px"></i>Từ
+        điển</a
+      >
+      <a class="margin category" href="/client/translate"
+        ><i class="fas fa-language" style="color: #1cabee; font-size: 20px"></i
+        >Dịch văn bản</a
+      >
+
+      <a class="margin" style="color: #ffc107"
+        ><i class="fas fa-bolt"></i>{{ ranks[0].total_score }}</a
+      >
+      <a class="margin" style="color: rgb(255, 136, 0)"
+        ><i class="fas fa-crown"></i>{{ ranks[0].crown }}</a
+      >
+
+      <div class="dropdown">
+        <img class="dropbtn" src="{{ avatar }}" />
+        <div class="dropdown-content">
+          <a href="client/profile">Hồ sơ</a>
+          <a href="client/thanhtich">Thành tích</a>
+          <a (click)="logout()">Đăng xuất</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-container__bg">
+    <router-outlet></router-outlet>
+  </div>
+</main>

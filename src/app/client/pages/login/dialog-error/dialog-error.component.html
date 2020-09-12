@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Hi {{data.name}} !!!</h1>
+<div mat-dialog-content>
+  <p>Tài khoản của bạn đã bị <span style="color: red;">KHÓA</span> !!!</p>
+  <p>Bạn có muốn <span style="color: #00ff9b;">ACTIVE</span> lại không ?</p>
+  <mat-form-field>
+    <mat-label>(Yes or No)</mat-label>
+    <input matInput [(ngModel)]="data.animal">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  
+  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial class="login-btn" >Ok</button>
+
+</div>

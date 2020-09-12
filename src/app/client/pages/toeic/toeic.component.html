@@ -1,0 +1,23 @@
+<div id="mainHome">
+  <h3 class="cover-img title-header">
+    {{ nameLession }}
+  </h3>
+  <div class="listBtn">
+    <div class="itemBtn" *ngFor="let toeic of toeic4">
+      <div class="cover-img">
+        <img
+          border="0"
+          alt="W3Schools"
+          src="{{ toeic.image }}"
+          width="148"
+          height="148"
+        />
+      </div>
+      <div class="cover-img">
+        <a routerLink="/client/{{ toeic.name.toLowerCase() }}/{{ idLession }}">
+          <button class="itemBtnLession" [textContent]="toeic.name"></button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

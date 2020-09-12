@@ -1,0 +1,14 @@
+<h5>Dịch văn bản (Phát hiện ngôn ngữ-Tiếng việt)</h5>
+<div class="main">
+  <div class="left">
+    <input type="text" #word (input)="updateInput(word)" />
+  </div>
+
+  <button (click)="transs()">Dịch</button>
+
+  <div class="right">
+    <span>
+      {{ rs.data.translations[0].translatedText }}
+    </span>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+h5 {
+  font-weight: 400;
+}
+.contain {
+  max-width: 1140px;
+  min-width: 900px;
+}
+.cover-center {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 330px;
+}
+.check {
+}
+.align-center {
+  text-align: center;
+}
+.imgborder {
+  width: 500px;
+  height: 330px;
+}
+.cover-left {
+  width: 50%;
+  // height: 350px;
+}
+input {
+  cursor: pointer;
+  height: 50px;
+  width: 80%;
+  margin-left: 20%;
+  text-align: center;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  outline: none;
+}
+input:focus {
+  color: #58cc02;
+  border: 3px solid #58cc02;
+}
+.check {
+  outline: none;
+  width: 250px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-radius: 15px;
+  border: 3px solid #58cc02;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  color: #58cc02;
+  background-color: #fff;
+}
+
+.check:hover {
+  color: #fff;
+  background-color: #58cc02;
+  border-color: #58cc02;
+  background-position: 0.75em bottom;
+  -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}

@@ -1,0 +1,178 @@
+<!-- Content Wrapper. Contains page content -->
+<!-- <div class="content-wrapper"> -->
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Questions</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Questions</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+
+        <div class="col-md-3">
+            <div class="card card-secondary">
+                <div class="card-header">
+                    <h3 class="card-title">Role</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
+                            title="Collapse">
+                            <i class="fas fa-minus"></i></button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="inputStatus">Category</label>
+                        <select class="form-control custom-select" ngDefaultControl [(ngModel)]="selectedCategory"
+                            (change)="selectCategory()">
+                            <!-- <option selected disabled >Select one</option> -->
+                            <option *ngFor="let item of categorys" [value]="item.id">{{item.name}}</option>
+                        </select>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="inputStatus">Lessions</label>
+                        <select class="form-control custom-select" ngDefaultControl [(ngModel)]="selectedLession"
+                            (change)="selectLession()">
+                            <!-- <option selected disabled >Select one</option> -->
+                            <option *ngFor="let item of lessions" [value]="item.id">{{item.name}}</option>
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputStatus">Part</label>
+                        <select class="form-control custom-select" ngDefaultControl [(ngModel)]="selectedPart"
+                            (change)="selectPart()">
+                            <!-- <option selected disabled >Select one</option> -->
+                            <option *ngFor="let item of parts" [value]="item.id">{{item.name}}</option>
+                        </select>
+
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="IsActive" [checked]="IsActive" (change)="IsActive = !IsActive">
+                        <label for="IsActive" [style.color]="IsActive? '#28a745' :'red'">
+                            IsActive : {{IsActive}}
+                        </label>
+                    </div>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+
+        </div>
+        <div class="col-md-9">
+            <div class="card card-primary" *ngIf="add">
+                <div class="card-header">
+                    <h3 class="card-title">Add Question</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
+                            title="Collapse">
+                            <i class="fas fa-minus"></i></button>
+                    </div>
+                </div>
+                <div class="card-body" >
+                    <div class="form-group">
+                        <label for="tile_question">Title Question</label>
+                        <input type="text" id="tile_question" class="form-control" [(ngModel)]="tile_question">
+                        <label for="question">Question</label>
+                        <input type="text" id="question" class="form-control" [(ngModel)]="question">
+                        <div class="row">
+                            <div class="col-md-3 pr-1">
+                                <div class="form-group">
+                                    <label>Đáp án A</label>
+                                    <input type="text" class="form-control" placeholder="Đáp án A" [(ngModel)]="dapana">
+                                </div>
+                            </div>
+                            <div class="col-md-3 px-1">
+                                <div class="form-group">
+                                    <label>Đáp án B</label>
+                                    <input type="text" class="form-control" placeholder="Đáp án B" [(ngModel)]="dapanb">
+                                </div>
+                            </div>
+                            <div class="col-md-3 pl-1">
+                                <div class="form-group">
+                                    <label>Đáp án C</label>
+                                    <input type="text" class="form-control" placeholder="Đáp án C" [(ngModel)]="dapanc">
+                                </div>
+                            </div>
+                            <div class="col-md-3 pl-1">
+                                <div class="form-group">
+                                    <label>Đáp án D</label>
+                                    <input type="text" class="form-control" placeholder="Đáp án D" [(ngModel)]="dapand">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 pr-1">
+                                <div class="form-group">
+                                    <label>Answer</label>
+                                    <input type="text" class="form-control" placeholder="Answer" [(ngModel)]="answer">
+                                </div>
+                            </div>
+                            <div class="col-md-8 pr-1">
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <input type="text" class="form-control" placeholder="Description"
+                                        [(ngModel)]="description">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <label>Sound</label>
+                    <div class="input-group">
+                        <div class="custom-file">
+                            <input class="custom-file-input" type="file" #userSound (change)="onSoundSelected($event)"
+                                name="sound" autocomplete="off">
+                            <label class="custom-file-label" for="exampleInputFile">{{sound}}</label>
+                        </div>
+                        <div class="input-group-append">
+                            <span *ngIf="avatar !== ''" class="input-group-text" id="" (click)="upload(2)"
+                                style="cursor: pointer;background-color: #28a745;">Upload</span>
+                        </div>
+                    </div>
+                    <div *ngIf="hasImage">
+                        <label>Image</label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input class="custom-file-input" type="file" #userImage
+                                    (change)="onImageSelected($event)" name="image" autocomplete="off">
+                                <label class="custom-file-label" for="exampleInputFile">{{image}}</label>
+                            </div>
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="" (click)="upload(1)"
+                                    style="cursor: pointer;background-color: #28a745;">Upload</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="submit" value="Submit" class="btn btn-success float-right" style="margin-right: 5em;" (click)="addQuestion()">
+                    <a href="#" class="btn btn-secondary float-right" style="margin-right: 2em;">Cancel</a>
+                </div>
+                <!-- /.card-body -->
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+
+    </div>
+</section>
+<!-- /.content -->
+<!-- </div> -->
+<!-- /.content-wrapper -->

@@ -1,0 +1,209 @@
+body {
+  padding: 0px 0px;
+  font-family: Arial;
+  font-size: 16px;
+}
+
+#contain {
+  width: 85%;
+  height: auto;
+  margin: 50px 100px;
+}
+
+#contain1 {
+  width: 65%;
+  height: auto;
+  float: left;
+}
+
+#info {
+  width: 100%;
+  height: 70px;
+}
+
+#image {
+  float: left;
+  background-color: violet;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+#name {
+  float: right;
+  width: 85%;
+  height: 40px;
+  padding: 15px 0px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#thanh_tich {
+  width: 100%;
+  height: 10px;
+  margin: 30px 0px;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 0px;
+}
+
+.hr {
+  width: 100%;
+  height: 0.5px;
+}
+
+.content {
+  width: 100%;
+  height: 100px;
+  margin: 25px 0px;
+}
+
+.img {
+  width: 80px;
+  height: 100px;
+  float: left;
+}
+
+.imgs {
+  width: 100%;
+  height: 100%;
+  border-radius: 20%;
+}
+
+.contents {
+  width: 70%;
+  height: 70px;
+  float: left;
+  padding: 15px 0px;
+  margin-left: 5%;
+}
+
+.title {
+  width: 100%;
+  height: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 19px;
+}
+
+.note {
+  width: 100%;
+  height: 20px;
+  color: darkgray;
+}
+
+.progress {
+  width: 100%;
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+.progress_bar {
+  width: 100%;
+  height: 150%;
+}
+
+.result {
+  text-align: right;
+  color: darkgray;
+  padding: 40px 0px;
+}
+
+#right {
+  width: 32%;
+  height: auto;
+  float: right;
+}
+
+.top {
+  border: solid 1px gainsboro;
+  width: 100%;
+  height: 220px;
+  border-radius: 20px;
+}
+
+.languages {
+  width: 90%;
+  height: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 40px 15px;
+}
+
+.content_top {
+  width: 100%;
+  height: 90px;
+  margin: 30px 0px;
+}
+
+.img_top {
+  border-radius: 10px;
+  float: left;
+  width: 75px;
+  height: 50px;
+  margin: 0px 15px;
+}
+
+.top_right {
+  float: left;
+  width: 68%;
+  height: 70px;
+}
+
+.top1 {
+  margin: 7px 0px;
+  font-weight: bold;
+}
+
+.top2 {
+  color: gray;
+}
+
+.bottom {
+  width: 32%;
+  height: auto;
+  float: right;
+  margin: 30px 0px;
+  border: solid 1px gainsboro;
+  border-radius: 20px;
+}
+
+.contain_bottom {
+  width: 100%;
+  height: 100%;
+}
+
+.title_bt {
+  width: 90%;
+  height: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 40px 15px;
+}
+
+.top_bt {
+  width: 100%;
+  height: auto;
+  margin: 30px 0px;
+}
+
+.contain_top_bt {
+  float: left;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.top_bt_1 {
+  margin: 7px 15px;
+  font-weight: bold;
+}
+
+.img_top_bt_1 {
+  border-radius: 50%;
+  float: left;
+  width: 50px;
+  height: 50px;
+  margin: 15px 15px;
+}

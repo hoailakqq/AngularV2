@@ -1,0 +1,33 @@
+import { ActivatedRoute } from '@angular/router';
+import { GetDataserviesService } from './../../../services/dataservies/get-dataservies.service';
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-part6',
+  templateUrl: './part6.component.html',
+  styleUrls: ['./part6.component.scss']
+})
+export class Part6Component implements OnInit {
+
+  constructor(
+    private service: GetDataserviesService,
+    private router: ActivatedRoute
+  ) {}
+
+  idLession: any;
+  questions: any;
+  ngOnInit() {
+    this.idLession = this.router.snapshot.params.id;
+
+    var obj = {
+      id: 4,
+      id_part: 6,
+      id_lession: parseInt(this.idLession.toString()),
+    };
+    this.service.getQuestionPart(obj).subscribe((data) => {
+      console.log(data);
+      this.questions = data;
+    });
+  }
+
+}

@@ -1,0 +1,115 @@
+<!-- Content Wrapper. Contains page content -->
+<!-- <div class="content-wrapper"> -->
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Questions</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">L</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">General</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
+                                title="Collapse">
+                                <i class="fas fa-minus"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="username">User Name</label>
+                            <input type="text" id="username" class="form-control"  (change)="onusername()">
+                            <label for="password">Password</label>
+                            <input type="text" id="password" class="form-control" (change)="onpassword()">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" class="form-control" (change)="onfullName()">
+                            <label for="email">Email</label>
+                            <input type="text" id="email" class="form-control" (change)="onemail()">
+                        </div>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input class="custom-file-input" type="file" #userPhoto (change)="onFileSelected($event)"
+                                    name="image" autocomplete="off">
+                                <label class="custom-file-label" for="exampleInputFile">{{avatar}}</label>
+                            </div>
+                            <div class="input-group-append">
+                                <span *ngIf="avatar !== ''" class="input-group-text" id="" (click)="upload()" style="cursor: pointer;background-color: #28a745;">Upload</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputDescription">User Description</label>
+                            <textarea id="inputDescription" class="form-control" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <div class="col-md-6">
+                <div class="card card-secondary">
+                    <div class="card-header">
+                        <h3 class="card-title">Role</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
+                                title="Collapse">
+                                <i class="fas fa-minus"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="inputStatus">Role user</label>
+                            <select class="form-control custom-select" ngDefaultControl [(ngModel)]="selectedLevel" (change)="selected()">
+                                <!-- <option selected disabled >Select one</option> -->
+                                <option  *ngFor="let item of items" [value]="item.roleId">{{item.name}}</option>
+                            </select>
+                            
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputStatus">Role user</label>
+                            <select class="form-control custom-select" ngDefaultControl [(ngModel)]="selectedLevel" (change)="selected()">
+                                <!-- <option selected disabled >Select one</option> -->
+                                <option  *ngFor="let item of items" [value]="item.roleId">{{item.name}}</option>
+                            </select>
+                            
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="IsActive" [checked]="IsActive" (change)="IsActive = !IsActive">
+                            <label for="IsActive" [style.color]="IsActive? '#28a745' :'red'">
+                                IsActive : {{IsActive}}
+                            </label>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <a href="#" class="btn btn-secondary">Cancel</a>
+                <input type="submit" value="Create new User" class="btn btn-success float-right" (click)="onSubmit()">
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+<!-- </div> -->
+<!-- /.content-wrapper -->

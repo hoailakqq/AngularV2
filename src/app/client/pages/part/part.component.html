@@ -1,0 +1,27 @@
+<div id="mainHome">
+  <h3 class="title-header">
+    {{ nameLession }}
+  </h3>
+  <div class="cover-img title-header">
+    <img
+      border="0"
+      alt="W3Schools"
+      src="https://firebasestorage.googleapis.com/v0/b/fir-rn-785e2.appspot.com/o/category%2FLogo_HCMUAF.png?alt=media&token=a4e14afc-5c99-4bfb-ab87-fed7dfc39ece"
+      width="148"
+      height="148"
+    />
+  </div>
+  <div class="listBtn">
+    <div class="itemBtn" *ngFor="let toeic of b1s">
+      <div class="cover-img">
+        <a
+          routerLink="/client/{{ hanldeString(toeic.name.toLowerCase()) }}/{{
+            idLession
+          }}"
+        >
+          <button class="itemBtnLession" [textContent]="toeic.name"></button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

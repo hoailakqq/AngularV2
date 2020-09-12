@@ -1,0 +1,61 @@
+<main class="root__container">
+  <div class="main__container">
+    <div class="login-card">
+      <main class="login-content">
+        <span class="login-header">Login</span>
+        <!-- login form -->
+
+        <form
+          class="login-form"
+          #authform="ngForm"
+          [formGroup]="fg"
+          *ngFor="let fg of userForm.controls"
+          (submit)="onSubmit(fg)"
+        >
+          <input type="hidden" formControlName="id" value="0" />
+          <input type="hidden" formControlName="firstName" value="0" />
+          <input type="hidden" formControlName="lastName" value="0" />
+          <input
+            type="userName"
+            [ngClass]="setCurrentClasses()"
+            autofocus
+            placeholder="Email"
+            formControlName="username"
+            value="linh123"
+            (keypress)="omit_special_char($event)"
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            formControlName="password"
+            class="login-input"
+            minlength="3"
+            (keypress)="omit_special_char($event)"
+            value="000"
+            required
+          />
+          <input
+            type="submit"
+            name="submit"
+            value="Login"
+            class="login-btn"
+            [class.btn-disabled]="!authform.form.valid"
+            [disabled]="!authform.form.valid"
+          />
+        </form>
+        <div class="signup-link-wrapper">
+          <span class="signup-notice">Don't have an account?</span>
+          <a class="signup-link" routerLink="/signup">Sign up</a>
+        </div>
+      </main>
+
+      <!-- linking to signup -->
+      <aside class="login-aside">
+        <div class="login-aside-overlay"></div>
+        <h1 class="login-welcome-text">Welcome Back!</h1>
+        <hr class="login-aside-hr" />
+      </aside>
+    </div>
+  </div>
+</main>

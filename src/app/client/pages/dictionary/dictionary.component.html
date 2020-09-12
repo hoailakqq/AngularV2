@@ -1,0 +1,46 @@
+<div id="contain">
+  <div id="title1">Dịch Tiếng Anh - Tiếng Việt</div>
+  <div id="title2">Xem giải nghĩa từ, ví dụ câu và nhiều điều khác</div>
+  <div id="content">
+    <i class="fa fa-language" aria-hidden="true" id="img"></i>
+
+    <div>
+      <input
+        id="input"
+        value=""
+        placeholder="Nhập bằng Tiếng Anh"
+        type="text"
+        #word
+        (input)="updateWord(word)"
+      />
+    </div>
+    <button id="btn" (click)="dic()">DỊCH NGHĨA</button>
+  </div>
+  <div id="en">
+    <div id="icon"><i class="fa fa-volume-up" aria-hidden="true"></i></div>
+    <div id="english">
+      {{ words.word }}: {{ words.pronounced }}
+      <hr width="100%" size="1px" align="center" />
+    </div>
+
+    <div id="trans">
+      <div id="trans1">BẢN DỊCH</div>
+      <div id="error">
+        {{ errors }}
+        <hr width="100%" size="1px" align="center" />
+      </div>
+      <div id="trans2">
+        {{ words.type1 }}: {{ words.content1 }}
+        <hr width="100%" size="1px" align="center" />
+      </div>
+      <div id="trans2">
+        {{ words.type2 }}: {{ words.content2 }}
+        <hr width="100%" size="1px" align="center" />
+      </div>
+      <div id="trans2">
+        {{ words.type3 }}: {{ words.content3 }}
+        <hr width="100%" size="1px" align="center" />
+      </div>
+    </div>
+  </div>
+</div>

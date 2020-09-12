@@ -1,0 +1,83 @@
+<div id="contain" style="">
+  <div id="contain1" style="">
+    <div id="info" style="">
+      <div id="image">Cài đặt tài khoản</div>
+      <button class="itemBtnLession2" (click)="save()">Lưu thay đổi</button>
+    </div>
+    <div class="content" style="">
+      <div>
+        <div class="imgs">Tên đăng nhập</div>
+      </div>
+      <div class="contents" style="">
+        <input class="note" value="{{ a.username }}" readonly />
+      </div>
+    </div>
+    <div class="content" style="">
+      <div>
+        <div class="imgs">Tên</div>
+      </div>
+      <div class="contents" style="">
+        <input
+          class="note"
+          type="text"
+          value="{{ a.name }}"
+          #name
+          (input)="updateName(name)"
+        />
+      </div>
+    </div>
+    <div class="content" style="">
+      <div>
+        <div class="imgs">Email</div>
+      </div>
+      <div class="contents" style="">
+        <input
+          class="note"
+          type="text"
+          value="{{ a.email }}"
+          #email
+          (input)="updateEmail(email)"
+        />
+      </div>
+    </div>
+    <div class="content" style="">
+      <div class="contents" style="">
+        <div class="custom-file mt-5">
+          <input
+            class="custom-file-input"
+            type="file"
+            #userPhoto
+            (change)="onFileSelected($event)"
+            name="image"
+            autocomplete="off"
+          />
+          <label class="custom-file-label" for="exampleInputFile">{{
+            avatar
+          }}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="right">
+    <div class="align-content">
+      <img src="{{ a.avatar }}" class="img_top" />
+    </div>
+    <div class="align-content">
+      <h5>{{ a.name }}</h5>
+    </div>
+    <div class="align-content">
+      <h6>{{ a.username }}</h6>
+    </div>
+    <div class="align-content">
+      <a href="/client/thanhtich"
+        ><button class="itemBtnLession">Thành tích</button></a
+      >
+    </div>
+    <div class="align-content">
+      <a href="/client/changepassword"
+        ><button class="itemBtnLession">Mật khẩu</button></a
+      >
+    </div>
+  </div>
+</div>

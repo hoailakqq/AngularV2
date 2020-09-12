@@ -1,0 +1,90 @@
+<main class="root__container">
+<div class="main__container">
+  <div class="signup-card">
+    <main class="signup-content">
+      <!-- <span class="signup-header">Signup</span> -->
+      <!-- signup form -->
+
+      <form
+        class="signup-form"
+        [formGroup]="fg"
+        *ngFor="let fg of userForm.controls"
+        (submit)="onSubmit(fg)"
+      >
+        <input type="hidden" formControlName="id" />
+        <input type="hidden" formControlName="name" />
+        <input type="hidden" formControlName="email" />
+        <input
+          type="email"
+          autofocus
+          placeholder="Email"
+          class="signup-input"
+          formControlName="username"
+          required
+          [(ngModel)]="email"
+          (keyup)="myFunction()"
+          [ngClass]="{
+            'example-class': nameuser === 3,
+            'signup-input': nameuser === 2,
+            'other-class': nameuser === 1
+          }"
+          (keypress)="omit_special_char($event)"
+        />
+        <h6 *ngIf="nameuser === 3">Username đã được đăng ký</h6>
+        <input
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+          class="signup-input"
+          minlength="6"
+          value="000"
+          required
+          [(ngModel)]="pass"
+          (keyup)="checkPassword()"
+          (keypress)="omit_special_char($event)"
+        />
+        <input
+          type="password"
+          placeholder="Confirm Password"
+          formControlName="passwordz"
+          minlength="6"
+          value="0001"
+          required
+          [(ngModel)]="confirmPass"
+          [ngClass]="{
+            'example-class': !cssconfirmPass,
+            'other-class': cssconfirmPass
+          }"
+          (keyup)="confirmPassword()"
+          (keypress)="omit_special_char($event)"
+        />
+        <h6 *ngIf="!cssconfirmPass">Mật khẩu không khớp</h6>
+        <input
+          type="submit"
+          name="submit"
+          value="Signup"
+          class="signup-btn"
+          [class.btn-disabled]="!cssconfirmPass || !fg.valid"
+          [disabled]="!cssconfirmPass || !fg.valid"
+        />
+      </form>
+      <div class="login-link-wrapper">
+        <span class="login-notice">Already Have an account?</span>
+        <a
+          class="login-link"
+          routerLink="/login"
+          routerLinkActive="active"
+          >login</a
+        >
+      </div>
+    </main>
+
+    <!-- linking to signup -->
+    <aside class="signup-aside">
+      <div class="signup-aside-overlay"></div>
+      <h1 class="signup-welcome-text">Join Minimus Today!</h1>
+      <hr class="signup-aside-hr" />
+    </aside>
+  </div>
+</div>
+</main>

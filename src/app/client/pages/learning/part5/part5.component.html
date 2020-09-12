@@ -1,0 +1,63 @@
+<div id="mainHome">
+  <div class="align-center">
+    <span style="font-size: 24px; font-weight: 400; color: #58cc02"
+      >Đúng: {{ dung }}/</span
+    >
+    <span style="font-size: 24px; font-weight: 400; color: #f44336">
+      Sai: {{ sai }}</span
+    >
+  </div>
+  <div>
+    <h5>
+      Câu hỏi {{ position + 1 }}/{{ questions.length }}:
+      {{ question.title_question }}
+    </h5>
+  </div>
+  <!-- audio -->
+  <div class="align-center">
+    <h5>{{ question.question }}</h5>
+  </div>
+  <!-- hinh va dap an -->
+  <div class="align-center cover-center contain">
+    <!-- img -->
+
+    <!-- cau tra loi -->
+    <div class="cover-left align-center">
+      <input
+        readonly
+        type="text"
+        [value]="question.dapanA"
+        #dapanA
+        (click)="updateA(dapanA)"
+      />
+
+      <input
+        readonly
+        type="text"
+        [value]="question.dapanB"
+        #dapanB
+        (click)="updateB(dapanB)"
+      />
+
+      <input
+        readonly
+        type="text"
+        [value]="question.dapanC"
+        #dapanC
+        (click)="updateC(dapanC)"
+      />
+      <input
+        readonly
+        type="text"
+        [value]="question.dapanD"
+        #dapanD
+        (click)="updateD(dapanD)"
+      />
+    </div>
+  </div>
+
+  <!-- button kiem tra -->
+  <div class="align-center">
+    <button class="check" (click)="handle()">kiểm tra</button>
+  </div>
+</div>
