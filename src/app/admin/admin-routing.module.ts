@@ -96,6 +96,10 @@ const routes: Routes = [
         component: ProfileComponent,
       },
       {
+        path: "edituser/:id",
+        component: UserEditComponent,
+      },
+      {
         path: "edituser",
         component: UserEditComponent,
       },

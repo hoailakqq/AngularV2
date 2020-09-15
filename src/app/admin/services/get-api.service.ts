@@ -73,10 +73,17 @@ export class GetAPIService {
   delQuesionSById(a){
     return this.http.post(this.rootHomeUrl+'delQuesionSById',a);
   }
+  delQuesionById(a){
+    return this.http.post(this.rootHomeUrl+'delQuesionById',a);
+  }
   pushQuesionById(a){
     return this.http.post(this.rootHomeUrl+'pushData',a);
   }
-
+  getUserById(a){
+    var ob = {};
+    ob['id'] = a;
+    return this.http.post(this.rootHomeUrl+'getQuesionById',ob);
+  }
   getQuesionById(a){
     var ob = {};
     ob['id'] = a;

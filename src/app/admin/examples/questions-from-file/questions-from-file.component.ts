@@ -80,7 +80,6 @@ part
       console.log(this.questions);
     });
   }
-  countries = this.questions;
   error = false;
   errorF():string {
     return "error";

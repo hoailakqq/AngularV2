@@ -43,9 +43,6 @@ export class EditQuestionComponent implements OnInit {
     this.getCategorys();
     this.sub = this.route.params.subscribe(params => {
       this.id = +params['id']; // (+) converts string 'id' to a number
-
-
-
    });
    this.api.getQuesionById(this.id).subscribe((data) => {
     this.questions = data;

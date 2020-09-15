@@ -80,7 +80,7 @@ export class QuestionComponent implements OnInit {
       console.log(this.questions);
     });
   }
-  countries = this.questions;
+  
   delete(a) {
     var Obj = {};
     Obj["id"] = 1 * a;
